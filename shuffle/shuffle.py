@@ -16,7 +16,7 @@ args = parser.parse_args()
 infile = args.infile.split(",")
 result, extra_case = [], []
 
-print(args.stumble)
+
 if args.stumble is True:
     print("Reading {} input files with extra stumbled words appended.....".format(len(infile)))
     with open("stumble.txt", "r") as fin:
