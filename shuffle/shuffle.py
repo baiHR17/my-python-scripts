@@ -8,18 +8,18 @@ parser = argparse.ArgumentParser(description='manual to this script')
 parser.add_argument("--infile", type=str, default="in1.txt")
 parser.add_argument("--outfile", type=str, default="out.txt")
 parser.add_argument("--limit", type=int, default=sys.maxsize)
-parser.add_argument('--hascase', dest='case', action='store_true')
-parser.add_argument('--nocase', dest='case', action='store_false')
-parser.set_defaults(case=False)
+parser.add_argument('--addstumble', dest='stumble', action='store_true')
+parser.add_argument('--nostumble', dest='stumble', action='store_false')
+parser.set_defaults(stumble=False)
 args = parser.parse_args()
 
 infile = args.infile.split(",")
 result, extra_case = [], []
 
-print(args.case)
-if args.case is True:
-    print("Reading {} input files with extra cases appended.....".format(len(infile)))
-    with open("case.txt", "r") as fin:
+print(args.stumble)
+if args.stumble is True:
+    print("Reading {} input files with extra stumbled words appended.....".format(len(infile)))
+    with open("stumble.txt", "r") as fin:
         for line in fin:
             extra_case.append(line)
 else:
@@ -37,7 +37,7 @@ for file in infile:
 print("Shuffling.....")
 if args.limit != sys.maxsize:
     result = result[:args.limit]
-if args.case:
+if args.stumble:
     result.extend(extra_case)
 random.shuffle(result)
 
