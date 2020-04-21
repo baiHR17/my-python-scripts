@@ -3,10 +3,10 @@ import argparse
 from time import *
 import sys
 
-# python shuffle --infile in1.txt,in2.txt --outfile out.txt
+# python shuffle --infile 1,2 --outfile out.txt
 parser = argparse.ArgumentParser(description='manual to this script')
-parser.add_argument("--infile", type=str, default="in1.txt")
-parser.add_argument("--outfile", type=str, default="out.txt")
+parser.add_argument("--infile", type=str, default="1")
+parser.add_argument("--outfile", type=str, default="out")
 parser.add_argument("--limit", type=int, default=sys.maxsize)
 parser.add_argument('--addstumble', dest='stumble', action='store_true')
 parser.add_argument('--nostumble', dest='stumble', action='store_false')
@@ -14,6 +14,8 @@ parser.set_defaults(stumble=False)
 args = parser.parse_args()
 
 infile = args.infile.split(",")
+infile = ["in" + num + ".txt" for num in  infile]
+outfile = args.outfile + ".txt"
 result, extra_case = [], []
 
 
@@ -42,9 +44,9 @@ if args.stumble:
 random.shuffle(result)
 
 
-print("Shuffling done! Writing to " + args.outfile)
+print("Shuffling done! Writing to " + outfile)
 # write into file
-file_handle = open(args.outfile,mode='w')
+file_handle = open(outfile,mode='w')
 
 for i, item in enumerate(result):
     file_handle.write(item)
