@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="84496b15-6960-4f38-ab3f-2d1a4dd95528" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shuffle.py" beforeDir="false" afterPath="$PROJECT_DIR$/shuffle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stumble.txt" beforeDir="false" afterPath="$PROJECT_DIR$/stumble.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out3.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,9 @@
       <workItem from="1587048406168" duration="167000" />
       <workItem from="1587191351803" duration="1205000" />
       <workItem from="1587194053441" duration="418000" />
-      <workItem from="1587479848721" duration="143000" />
+      <workItem from="1587479848721" duration="743000" />
+      <workItem from="1587698998443" duration="428000" />
+      <workItem from="1587705599359" duration="736000" />
     </task>
     <servers />
   </component>
