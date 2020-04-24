@@ -14,10 +14,11 @@ parser.set_defaults(stumble=False)
 args = parser.parse_args()
 
 infile = args.infile.split(",")
-infile = ["in" + num + ".txt" for num in  infile]
-outfile = args.outfile + ".txt"
+# infile = ["in" + num + ".txt" for num in  infile]
+# outfile = args.outfile + ".txt"
+outfile = args.outfile
 result, extra_case = [], []
-
+limit = args.limit
 
 if args.stumble is True:
     print("Reading {} input files with extra stumbled words appended.....".format(len(infile)))
@@ -37,11 +38,12 @@ for file in infile:
 
 # shuffle the result
 print("Shuffling.....")
-if args.limit != sys.maxsize:
-    result = result[:args.limit]
+random.shuffle(result)
+
+if limit != sys.maxsize:
+    result = result[:limit]
 if args.stumble:
     result.extend(extra_case)
-random.shuffle(result)
 
 
 print("Shuffling done! Writing to " + outfile)
